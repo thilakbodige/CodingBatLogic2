@@ -1,0 +1,15 @@
+public int makeChocolate(int small, int big, int goal)
+{
+  if (goal > small + big * 5) return -1;
+    
+    int maxBig = Math.min(big, goal / 5);
+    for (int i = maxBig; i >= 0; i--) 
+    {
+        if (goal - i * 5 <= small) 
+        {
+            return goal - i * 5;
+        }
+    }
+    
+    return -1;
+}
